@@ -1,0 +1,27 @@
+<table class="table table-striped table-hover caption-top">
+    <caption>last updated: {% now "r" %}</caption>
+    <thead>
+        <tr>
+            <th scope="col">survey_field_id</th>
+            <th scope="col">ra</th>
+            <th scope="col">dec</th>
+            <th scope="col">observations</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for survey_field in page_obj %}
+        <tr>
+            <th scope="row">{{ survey_field.survey_field_id }}</th>
+            <td>{{ survey_field.ra}}</td>
+            <td>{{ survey_field.dec}}</td>
+            <td>{{ survey_field.observations}}</td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="3"> No objects in the list. </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

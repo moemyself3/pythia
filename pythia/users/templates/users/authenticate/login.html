@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="shadow card mx-auto" style="width: 25rem;">
+<div class="card-header">
+Log in
+</div>
+<div class="card-body">
+<form action="" method=POST>
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="InputUsername1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="InputUsername1" name="username" aria-describedby="usernameHelp">
+    <div id="usernameHelp" class="form-text">This username is unique to this service.</div>
+  </div>
+  <div class="mb-3">
+    <label for="InputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="InputPassword1" name="password">
+  </div>
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}
+

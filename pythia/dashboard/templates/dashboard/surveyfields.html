@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Survey Fields{% endblock %}
+
+{% block content %}
+    <h1>Survey Fields</h1>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link disabled">previous</a></li>
+    {% endif %}
+    
+    {% for page in page_nav_list %}
+        {% if page !=  '…' %}
+            {% if page == page_obj.number %}
+                <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+            {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+            {% endif %} 
+        {% elif page == '…' %}
+            <li class="page-item"><a class="page-link disabled">…</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link disabled">last</a></li>
+    {% endif %}
+
+  </ul>
+</nav>
+<div id="table-surveyfields">
+   {% include "dashboard/fragments/surveyfieldstable.html" %}
+</div>
+
+
+{%endblock%}

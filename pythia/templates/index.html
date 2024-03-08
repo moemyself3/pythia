@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Pythia{%endblock%}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    Welcome Observers
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Here's whats up!</h5>
+    <p class="card-text">If you are an observer log in to get started. Otherwise you can explore the site.</p>
+    <a href="{% url "users:login" %}" class="btn btn-primary">Login</a>
+    <a href="#" class="btn btn-primary">Alerts</a>
+  </div>
+</div>
+{% endblock %}

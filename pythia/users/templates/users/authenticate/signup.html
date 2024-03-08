@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="shadow card mx-auto" style="width: 25rem;">
+<div class="card-header">
+Sign Up
+</div>
+<div class="card-body">
+<form action="" method=POST>
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="mb-3">
+        {% if field.errors %}
+        <div class="alert alert-warning" role="alert">
+        {{ field.errors }}
+        </div>
+        {% endif %} 
+        <label class="form-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.help_text %}
+          <div class="form-text" id="{{ field.auto_id }}_helptext">
+            {{ field.help_text|safe }}
+          </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}
+

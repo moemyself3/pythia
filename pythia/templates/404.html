@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Page not found!{%endblock%}
+{% block content %}
+<div class="card text-center">
+  <div class="card-header">
+    404 Page not found
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Oh oh...</h5>
+    <p class="card-text">Try going to the main page.</p>
+    <a href="{% url "dashboard:index" %}" class="btn btn-primary">Home</a>
+  </div>
+  <div class="card-footer text-body-secondary fw-lighter">
+    I know the number of the sand and the measure of the sea;
+  </div>
+</div>
+{% endblock %}
