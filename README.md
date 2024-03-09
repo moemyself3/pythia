@@ -8,7 +8,9 @@ The database relies on PostgreSQL schemas!!
 In your database you will need to setup the following schemas:
 
 - public
-- surveydb 
+- surveydb
+
+
 
 ## Planned Features
 
@@ -18,6 +20,7 @@ In your database you will need to setup the following schemas:
 - [x] Mark field as observed
 - [ ] Catalog Viewer
 - [ ] Profile Manager
+- [ ] Broker Alert Viewer
 - [ ] More...
 
 ## Known Issues
