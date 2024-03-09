@@ -10,6 +10,35 @@ In your database you will need to setup the following schemas:
 - public
 - surveydb
 
+### Python and Django
+This was written using Python 3.12 and Django 5.0.3.
+
+## Installation
+### Steps
+
+1. make a virtual enviorment
+
+We recommend you make a seperate virtual enviroment!
+
+### Note for conda enviorments
+If you use anaconda to make a conda enviorment and try to install django 
+with conda you may be using an older version of django!
+
+To use the latest version of django either use conda-forge channel or
+use pip install django.
+
+2. install Django
+3. download or clone this repo
+4. ``cd pythia/pythia``
+5. copy ``.env.example`` and save as ``.env``
+6. edit ``.env`` with your setup
+    1. be sure to update parameters for your use case
+7. run migrations for the database schemas seperately
+    1. ``python manage.py migrate --database=django``
+    2. ``python manage.py migrate --database=surveydb``
+8. optional step for admin account ``python manage.py createsuperuser``
+9. ``python manage.py runserver``
+10. open a browser window and visit the ip address django provides, the default is ``http://127.0.0.1:8000/``
 
 
 ## Planned Features
