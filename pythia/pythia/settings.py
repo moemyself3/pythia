@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard.apps.DashboardConfig',
     'users.apps.UsersConfig',
+    'alerts.apps.AlertsConfig',
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,17 @@ DATABASES = {
         'HOST': os.environ.get('SQL_HOST', 'localhost'),
         'PORT': os.environ.get('SQL_PORT', '5432'),
     },
+    'alerts': {
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
+        'OPTIONS': {
+            'options': '-c search_path=alerts'
+        },
+        'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
+        'USER': os.environ.get('SQL_USER', 'user'),
+        'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
+        'HOST': os.environ.get('SQL_HOST', 'localhost'),
+        'PORT': os.environ.get('SQL_PORT', '5432'),
+    },
 }
 
 # Database routers for seperate database management
@@ -113,6 +125,7 @@ DATABASES = {
 DATABASE_ROUTERS = [
     "routers.db_routers.DjangoDBRouter",
     "routers.db_routers.DashboardRouter",
+    "routers.db_routers.AlertsRouter",
 ]
 
 
