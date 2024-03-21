@@ -9,6 +9,7 @@ In your database you will need to setup the following schemas:
 
 - public
 - surveydb
+- alerts
 
 ### Python and Django
 This was written using Python 3.12 and Django 5.0.3.
@@ -36,6 +37,7 @@ use pip install django.
 7. run migrations for the database schemas seperately
     1. ``python manage.py migrate --database=django``
     2. ``python manage.py migrate --database=surveydb``
+    3. ``python manage.py migrate --database=alerts``
 8. optional step for admin account ``python manage.py createsuperuser``
 9. ``python manage.py runserver``
 10. open a browser window and visit the ip address django provides, the default is ``http://127.0.0.1:8000/``
