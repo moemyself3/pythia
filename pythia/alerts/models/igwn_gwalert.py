@@ -23,7 +23,7 @@ class Event(models.Model):
     time = models.DateTimeField() 
     far = models.FloatField()
     significant = models.BooleanField()
-    instruments = models.ForeignKey('EventInstrument', on_delete=models.CASCADE)
+    instruments = models.ManyToManyField('EventInstrument')
     group = models.ForeignKey('EventGroup', on_delete=models.CASCADE)
     pipeline = models.ForeignKey('EventPipeline', on_delete=models.CASCADE)
     search = models.ForeignKey('EventSearch', on_delete=models.CASCADE)
